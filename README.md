@@ -24,7 +24,7 @@ BrainWash interpreter is written in C++.
 Any function must have name and code.
 - The beginning of the file is considered a global space.
 - Everything that fits in the global space up to the first character "c" will be the name of the function (excluding spaces, new lines, tabs and comments).
-  The function name can only contain characters from the Brainwash language.
+  The function name can only contain characters from the BrainWash language.
 - Everything that fits from the first character "c" to the second character "c" will be the function code.
 - Everything that comes after will be considered a global space again.
 ```
@@ -36,14 +36,14 @@ Any function must have name and code.
 ## Function return
 'r' - makes it possible to return from a function.
 - Execution of the current function stops.
-- The place where the pointer points will be considered the number of bytes to be copied, bytes will be copied starting from the next cell.
-- Bytes will be copied in the begining of previous function memory array.
+- The place where the pointer points store's a number of bytes to be copied, bytes will be copied starting from the next cell.
+- Bytes will be copied to the begining of previous function memory array.
 - Pointer will be placed in first cell.
 
 ## Function call
 'i' - makes it possible to call a function.
 - Execution of the current function stops.
 - Gets name of the function. The function name should be limited to 'i' on both sides.
-- The place where the pointer points will be considered the number of bytes to be copied, bytes will be copied starting from the next cell.
-- Bytes will be copied in the begining of new function memory array.
+- The place where the pointer points store's a number of bytes to be copied, bytes will be copied starting from the next cell.
+- Bytes will be copied to the begining of new function memory array.
 - Pointer will be placed in first cell.
