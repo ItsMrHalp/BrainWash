@@ -6,7 +6,7 @@
 #include <stack>
 #include <tuple>
 
-//#define Log
+#define Log
 
 std::map<std::string,std::vector<unsigned char>> read_from_file(char* path)
 {
@@ -219,18 +219,15 @@ int main(int argc, char* argv[])
 				}
 				break;
 			}
-
-#ifdef Log
-			std::cout << code[Noperation] << std::endl;
-			for (int i = 0; i < memsize; i++)
-				std::cout << int(MainArray[i]) << ' ';
-			std::cout << std::endl;
-#endif 
 		}
+#ifdef Log
+		for (int i = 0; i < memsize; i++)
+			std::cout << int(MainArray[i]) << ' ';
+		std::cout << std::endl;
+#endif 
 	}
 	catch(std::exception e)
 	{
 		std::cout << e.what();
 	}
-
 }

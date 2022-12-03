@@ -1,28 +1,49 @@
 +][+c
-i+++i
-[>+>+>+>+>+>+>+<<<<<<<-]
-i--i
-[>>+>+>+>+>+>+<<<<<<<-]
->>---
->++++++++
->++++++++
->+++++++++++
->+++++++++++++++++
->++++++++++++++++
-<<<<<<<+++++++
-i-+-i
+++>++++
+>+++++
+<<i+>i
 c
 
-+++c	#70#
-i++i[>+++++++<-]+rc
+++c # a plus b #
+[>+<-]+rc
 
---c		#30#
-i++i[>+++<-]+rc
++.c # a multiply b #
+>[<[>>+>+<<<-]>->[<<+>>-]<]
+>+
+rc
 
-++c		#10#
-i+-+i[>++<-]+rc
++>c #if a>b#
+>>>+>+>+<<<<
+[>+<-]  #let's make first cell empty#
+<[>+<-]
+++i+<<i #call <=#
+[>>]>>r
+c
 
-+-+c+> #5#
-+++++<rc
++<c # if a < b #
+>[>+<-]  #let's make first cell empty#
+<[>+<-]
+>
+>>>+>+<<<<    #and make pattern 0110 after our number#
+>[<<]>>>[r]<  #if b = 0 than false#
+[<]>>>[r]<<  #if a = 0 and b != 0 than true#
+>-			
+[<-[<]>>>[r]<-]	#decrease a and b to b = 0 and check if a became 0#
+>>>
+rc
 
--+-c[.>]rc
++<<c # if a <= b #
+>[>+<-]  #let's make first cell empty#
+<[>+<-]
+>
+>>>+>+<<<<    #and make pattern 0110 after our number#
+[<]>>>[r]<<  #if a = 0 than true#
+>			
+[<-[<]>>>[r]<-]	#decrease a and b to b = 0 and check if a became 0#
+>>>
+rc
+
+--c #ascii number '0' 48#
++++[>++++<-]>[>++++<-]
++
+rc
